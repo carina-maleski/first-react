@@ -1,13 +1,16 @@
-import React from "react";
-import "./Home.css";
-import homeLogo from "../../assets/dognho.png";
+import React, { useState } from "react";
 
 function Home() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
-    <>
-      <h1 className="titulo">Home</h1>
-      <img src={homeLogo} className="img" alt="cachorrinho tela inicial" />
-    </>
+    <div>
+      {loggedIn ? (
+        <h1>Bem-vindo de volta!</h1>
+      ) : (
+        <button onClick={() => setLoggedIn(true)}>Entrar</button>
+      )}
+    </div>
   );
 }
 
