@@ -8,8 +8,9 @@ function NavBar() {
         className="w-full bg-cyan-900
        text-stone-100 flex justify-center py-4"
       >
-        <div className="bg container flex justify-between text-lg">
+        <div className="container flex justify-between text-lg">
           <div className="text-2xl font-bold uppercase">Blog Pessoal</div>
+
           <div className="flex gap-4">
             <Link to="/login" className="hover:underline">
               Login
