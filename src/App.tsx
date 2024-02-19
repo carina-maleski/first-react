@@ -5,23 +5,24 @@ import Footer from "./components/footer/Footer";
 import NavBar from "./components/navBar/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./paginas/login/Login";
-import UserProvider from "./contexts/UserContext";
+import Cadastro from "./paginas/cadastro/Cadastro";
 
 function App() {
   return (
-    <UserProvider>
+    <>
       <BrowserRouter>
         <NavBar />
         <div className="min-h-[80vh]">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Cadastro />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/home" element={<Home />} />
           </Routes>
         </div>
         <Footer />
       </BrowserRouter>
-    </UserProvider>
+    </>
   );
 }
 
