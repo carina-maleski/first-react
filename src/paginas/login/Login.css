@@ -1,0 +1,8 @@
+.bgLogin {
+  background-image: url(../../assets/login1.jpg);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
