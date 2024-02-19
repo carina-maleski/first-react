@@ -5,10 +5,11 @@ import Footer from "./components/footer/Footer";
 import NavBar from "./components/navBar/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./paginas/login/Login";
+import UserProvider from "./contexts/UserContext";
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <BrowserRouter>
         <NavBar />
         <div className="min-h-[80vh]">
@@ -20,7 +21,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
-    </>
+    </UserProvider>
   );
 }
 
