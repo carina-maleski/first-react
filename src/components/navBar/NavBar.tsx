@@ -1,7 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function NavBar() {
+  const navigate = useNavigate();
+  const { usuario, handleLogout } = useContext(AuthContext);
+
+  function logout() {
+    handleLogout();
+    alert("Usuário deslogado com sucesso.");
+    navigate("/login");
+  }
+
+  let navbarComponent;
+
   return (
     <>
       <div
@@ -9,20 +21,22 @@ function NavBar() {
        text-stone-100 flex justify-center py-4"
       >
         <div className="container flex justify-between text-lg">
-          <div className="text-2xl font-bold uppercase">Blog Pessoal</div>
+          <Link to="/home" className="text-2xl font-bold uppercase">
+            Blog Pessoal
+          </Link>
 
           <div className="flex gap-4">
-            <Link to="/login" className="hover:underline">
-              Login
-            </Link>
-            <Link to="/home" className="hover:underline">
-              Home
-            </Link>
             <div className="hover:underline">Postagens</div>
-            <div className="hover:underline">Temas</div>
-            <div className="hover:underline">Cadastrar tema</div>
+            <Link to="/temas" className="hover:underline">
+              Temas
+            </Link>
+            <Link to="/cadastroTema" className="hover:underline">
+              Cadastrar tema
+            </Link>
             <div className="hover:underline">Perfil</div>
-            <div className="hover:underline">Sair</div>
+            <Link to="" onClick={logout} className="hover:underline">
+              Sair
+            </Link>
           </div>
         </div>
       </div>
