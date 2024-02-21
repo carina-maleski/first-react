@@ -148,13 +148,13 @@ function Cadastro() {
           </div>
           <div className="flex justify-around w-full gap-8">
             <button
-              className="rounded text-stone-100 bg-cyan-500 hover:bg-cyan-800 w-1/2 py-2"
+              className="rounded hover:text-stone-100 bg-cyan-500 hover:bg-cyan-800 w-1/2 py-2"
               type="submit"
             >
               Cadastrar
             </button>
             <button
-              className="rounded text-stone-100 bg-red-300 hover:bg-red-800 w-1/2 py-2"
+              className="rounded hover:text-stone-100 bg-red-300 hover:bg-red-800 w-1/2 py-2"
               onClick={back}
             >
               Cancelar
