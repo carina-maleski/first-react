@@ -9,7 +9,7 @@ function Home() {
       <div className="bg-cyan-900 flex justify-center">
         <div className="container grid grid-cols-2 text-stone-100">
           <div className="flex flex-col gap-4 items-center justify-center py-4">
-            <h2 className="text-5xl font-bold">Boas-vindas!</h2>
+            <h2 className="text-5xl font-bold">Oi, sinta-se em casa!</h2>
             <p className="text-xl">Expresse aqui seus pensamentos e opiniões</p>
             <div className="flex justify-around gap-4">
               <ModalPostagem />
@@ -20,7 +20,7 @@ function Home() {
           </div>
 
           <div className="flex justify-center">
-            <img src={homeLogo} alt="cachorrinho" className="w-100" />
+            <img src={homeLogo} alt="cachorrinho" className="w-1/2" />
           </div>
         </div>
       </div>
