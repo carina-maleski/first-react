@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import "./Cadastro.css";
+import { toastAlerta } from "../../util/toastAlerta";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -54,13 +55,14 @@ function Cadastro() {
           usuario,
           setUsuarioResposta
         );
-        alert("Usuário cadastrado com sucesso");
+        toastAlerta("Usuário cadastrado com sucesso", "sucesso");
       } catch (error) {
-        alert("Erro ao cadastrar Usuário");
+        toastAlerta("Erro ao cadastrar Usuário", "sucesso");
       }
     } else {
-      alert(
-        "Dados inconsistentes. Verifique as informações de cadastro e tente novamente."
+      toastAlerta(
+        "Dados inconsistentes. Verifique as informações de cadastro e tente novamente.",
+        "erro"
       );
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
