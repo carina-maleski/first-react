@@ -6,6 +6,7 @@ import { buscar } from "../../../services/Service";
 import Postagem from "../../../models/Postagem";
 import { DNA } from "react-loader-spinner";
 import CardPostagem from "../cardPostagens/CardPostagem";
+import { toastAlerta } from "../../../util/toastAlerta";
 
 function ListaPostagens() {
   const [postagens, setPostagens] = useState<Postagem[]>([]);
@@ -17,7 +18,7 @@ function ListaPostagens() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      toastAlerta("Você precisa estar logado", "info");
       navigate("/");
     }
   }, [token]);
@@ -31,7 +32,7 @@ function ListaPostagens() {
       });
     } catch (error: any) {
       if (error.toString().includes("403")) {
-        alert("O token expirou. Por favor, logar novamente.");
+        toastAlerta("O token expirou. Por favor, logar novamente.", "info");
         handleLogout();
       }
     }
