@@ -1,4 +1,3 @@
-import React from "react";
 import Popup from "reactjs-popup";
 import FormularioPostagem from "../formularioPostagem/FormularioPostagem";
 import "./ModalPostagem.css";
